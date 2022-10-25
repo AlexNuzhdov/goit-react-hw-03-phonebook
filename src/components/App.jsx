@@ -50,11 +50,11 @@ export class App extends React.Component {
 
   componentDidMount () {
     console.log('App componentDidMount');
-    const contact = localStorage.getItem('contacts');
-    const parseContacts = JSON.parse(contact);
+    const contacts = localStorage.getItem('contacts');
+    const parseContacts = JSON.parse(contacts);
     
     if(parseContacts) {
-      this.setState({contact: parseContacts});
+      this.setState({contacts: parseContacts});
     }
   };
 
@@ -70,11 +70,12 @@ export class App extends React.Component {
   
 
   render() {
-
+   
     const { filter } = this.state;
     const visibleContacts = this.getContacts();
     
   return (
+    
     <>
     <section>
       <h1>Phonebook</h1>
